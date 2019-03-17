@@ -1,34 +1,38 @@
-.data	# diretiva para início do segmento de dados
-	.align 0	# alinha os dados byte a byte na memória
+.data	# diretiva para inï¿½cio do segmento de dados
+	.align 0	# alinha os dados byte a byte na memï¿½ria
 	str_menu: .asciiz "------ MENU PRINCIPAL ------\n"	# definindo a string str_menu
-	str_avisa: .asciiz "(Todos os números fornecidos para as operações abaixo devevm ser inteiros)\n"	# definindo a string str_avisa
+	str_avisa: .asciiz "(Todos os nï¿½meros fornecidos para as operaï¿½ï¿½es abaixo devevm ser inteiros)\n"	# definindo a string str_avisa
 	str_soma: .asciiz "0 - Soma\n"	# e assim por diante...
-	str_sub: .asciiz "1 - Subtração\n"
-	str_mult: .asciiz "2 - Multiplicação (ambos devem ser de, no máximo, 16 bits)\n"
-	str_div: .asciiz "3 - Divisão (ambos devem ser de, no máximo, 16 bits)\n"
-	str_pot: .asciiz "4 - Potênciação (primeiro elevado ao segundo)\n"
+	str_sub: .asciiz "1 - Subtraï¿½ï¿½o\n"
+	str_mult: .asciiz "2 - Multiplicaï¿½ï¿½o (ambos devem ser de, no mï¿½ximo, 16 bits)\n"
+	str_div: .asciiz "3 - Divisï¿½o (ambos devem ser de, no mï¿½ximo, 16 bits)\n"
+	str_pot: .asciiz "4 - Potï¿½nciaï¿½ï¿½o (primeiro elevado ao segundo)\n"
 	str_sqrt: .asciiz "5 - Raiz quadrada\n"
 	str_tab: .asciiz "6 - Tabuada\n"
-	str_imc: .asciiz "7 - Cálculo do IMC\n"
+	str_imc: .asciiz "7 - Cï¿½lculo do IMC\n"
 	str_fat: .asciiz "8 - Fatorial\n"
-	str_fib: .asciiz "9 - Cálculo da sequência de Fibonacci no intervalo (a, b)\n"
+	str_fib: .asciiz "9 - Cï¿½lculo da sequï¿½ncia de Fibonacci no intervalo (a, b)\n"
 	str_end: .asciiz "10 - Sair do programa\n"
-	str_opc: .asciiz "\nBem-vindx à calculadora MIPS! Digite o número correspondente à opção que deseja selecionar:"
+	str_opc: .asciiz "\nBem-vindx ï¿½ calculadora MIPS! Digite o nï¿½mero correspondente ï¿½ opï¿½ï¿½o que deseja selecionar:"
 	str_n1: .asciiz "n1 = "
 	str_n2: .asciiz "n2 = "
-	str_rep: .asciiz "\n\nA opção digitada não existe. Digite uma opção válida!\n\n\n"
+	str_rep: .asciiz "\n\nA opï¿½ï¿½o digitada nï¿½o existe. Digite uma opï¿½ï¿½o vï¿½lida!\n\n\n"
+	times :	.asciiz " X "
+	equals :	.asciiz " = " 
+	n :	.asciiz "\n"
+
 	
-.text	# diretiva para início do segmento de texto
+.text	# diretiva para inï¿½cio do segmento de texto
 	.globl main	# seta a label main como global
 	
-main:	# início do programa
+main:	# inï¿½cio do programa
 	
 	# vai imprimir uma string
-	li $v0, 4			# atribui 4 para $v0. Código para print_str
+	li $v0, 4			# atribui 4 para $v0. Cï¿½digo para print_str
 	la $a0, str_menu			# carrega endereco de str_menu em $a0
-	syscall				# chamada de sistema para E/S (imprime a string que tem o endereço em $a0)
+	syscall				# chamada de sistema para E/S (imprime a string que tem o endereï¿½o em $a0)
 	
-	# repetiremos o bloco de código acima sempre que quisermos imprimir uma string
+	# repetiremos o bloco de cï¿½digo acima sempre que quisermos imprimir uma string
 	
 	li $v0, 4
 	la $a0, str_avisa
@@ -82,20 +86,20 @@ main:	# início do programa
 	la $a0, str_opc
 	syscall
 	
-	# vai pegar a opção do usuário
-	li $v0, 5	# código para read_int
+	# vai pegar a opï¿½ï¿½o do usuï¿½rio
+	li $v0, 5	# cï¿½digo para read_int
 	syscall
 	
-	move $t0, $v0	# copia a opção digitada pelo usuário para o registrador $t0
+	move $t0, $v0	# copia a opï¿½ï¿½o digitada pelo usuï¿½rio para o registrador $t0
 	
-	# a seguir, definiremos em qual das funções o programa entrará
+	# a seguir, definiremos em qual das funï¿½ï¿½es o programa entrarï¿½
 	
-	beq $t0, $zero, soma	# se a opção escolhida for 0, então o programa entrará na função de soma
-	# caso contrário, continuará procurando a opção certa
-	# a mesma ideia se aplica em cada um dos blocos de código abaixo (como se fossem diversos ifs)
+	beq $t0, $zero, soma	# se a opï¿½ï¿½o escolhida for 0, entï¿½o o programa entrarï¿½ na funï¿½ï¿½o de soma
+	# caso contrï¿½rio, continuarï¿½ procurando a opï¿½ï¿½o certa
+	# a mesma ideia se aplica em cada um dos blocos de cï¿½digo abaixo (como se fossem diversos ifs)
 	
 	li $t1, 1	# carrego o valor constante 1 para o registrador $t1
-	beq $t0, $t1, subt	# se o valor que o usuário digitou foi 1, entra na operação de subtração
+	beq $t0, $t1, subt	# se o valor que o usuï¿½rio digitou foi 1, entra na operaï¿½ï¿½o de subtraï¿½ï¿½o
 	
 	li $t1, 2
 	beq $t0, $t1, multi
@@ -124,12 +128,12 @@ main:	# início do programa
 	li $t1, 10
 	beq $t0, $t1, end
 	
-	j repeat	# caso o usuário entre com um número inválido de opção
+	j repeat	# caso o usuï¿½rio entre com um nï¿½mero invï¿½lido de opï¿½ï¿½o
 
 soma:
 
 
-	j main	# o programa pedirá por uma nova opção
+	j main	# o programa pedirï¿½ por uma nova opï¿½ï¿½o
 	
 subt:
 
@@ -156,6 +160,54 @@ sqrt:
 	
 tab:
 
+	li $v0,4
+	la $a0,str_n1
+	syscall
+				
+	li $v0,5
+	syscall
+	move $a1,$v0
+	
+	
+	addi $t1, $zero, 1 #first number 
+	addi $t3, $zero 11 #stop condtion
+	
+			
+loop_tab :
+	
+	beq $t1,$t3,end_loop_tab
+					
+	li $v0,1 
+	move $a0, $a1 #print the parameter number
+	syscall
+	
+	li $v0, 4
+	la $a0, times # print x
+	syscall
+	
+	li $v0,1 
+	move $a0, $t1 #print the actual number
+	syscall
+	
+	li $v0, 4
+	la $a0, equals #print =
+	syscall
+	
+	li $v0,1
+	mul $t2, $a1, $t1 #print a * i
+	move $a0, $t2 #print the result
+	syscall
+	
+	li $v0, 4
+	la $a0, n #print \n
+	syscall
+	
+	addi $t1,$t1, 1 #go to the next number
+	
+	j loop_tab 
+	
+end_loop_tab :
+	
 	j main
 	
 imc:
@@ -171,11 +223,11 @@ fib:
 	j main
 
 end:
-	li $v0, 10	# código para finalizar o programa
+	li $v0, 10	# cï¿½digo para finalizar o programa
 	syscall
 	
-repeat:	# caso o usuário digite um valor inapropriado de opção, esta parte do código 
-	# entrará em ação e pedirá para que o mesmo digite uma opção válida
+repeat:	# caso o usuï¿½rio digite um valor inapropriado de opï¿½ï¿½o, esta parte do cï¿½digo 
+	# entrarï¿½ em aï¿½ï¿½o e pedirï¿½ para que o mesmo digite uma opï¿½ï¿½o vï¿½lida
 	li $v0, 4
 	la $a0, str_rep
 	syscall
