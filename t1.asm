@@ -16,6 +16,7 @@
 	str_opc: .asciiz "\nBem-vindx à calculadora MIPS! Digite o número correspondente à opção que deseja selecionar:"
 	str_n1: .asciiz "n1 = "
 	str_n2: .asciiz "n2 = "
+	str_rep: .asciiz "\n\nA opção digitada não existe. Digite uma opção válida!\n\n\n"
 	
 .text	# diretiva para início do segmento de texto
 	.globl main	# seta a label main como global
@@ -89,13 +90,12 @@ main:	# início do programa
 	
 	# a seguir, definiremos em qual das funções o programa entrará
 	
-	li $t1, 0	# carrego o valor 0 para o registrador $t1
-	beq $t0, $t1, soma	# se a opção escolhida for 0, então o programa entrará na função de soma
+	beq $t0, $zero, soma	# se a opção escolhida for 0, então o programa entrará na função de soma
 	# caso contrário, continuará procurando a opção certa
-	# a mesma ideia se aplica em cada um dos blocos de código abaixo
+	# a mesma ideia se aplica em cada um dos blocos de código abaixo (como se fossem diversos ifs)
 	
-	li $t1, 1	
-	beq $t0, $t1, subt
+	li $t1, 1	# carrego o valor constante 1 para o registrador $t1
+	beq $t0, $t1, subt	# se o valor que o usuário digitou foi 1, entra na operação de subtração
 	
 	li $t1, 2
 	beq $t0, $t1, multi
@@ -124,12 +124,12 @@ main:	# início do programa
 	li $t1, 10
 	beq $t0, $t1, end
 	
-	j end	# desvio incondicional para o fim do programa (apenas como medida de prevenção)
+	j repeat	# caso o usuário entre com um número inválido de opção
 
 soma:
 
 
-	j main
+	j main	# o programa pedirá por uma nova opção
 	
 subt:
 
@@ -145,6 +145,8 @@ divi:
 	j main
 	
 pot:
+	
+
 
 	j main
 	
@@ -171,3 +173,11 @@ fib:
 end:
 	li $v0, 10	# código para finalizar o programa
 	syscall
+	
+repeat:	# caso o usuário digite um valor inapropriado de opção, esta parte do código 
+	# entrará em ação e pedirá para que o mesmo digite uma opção válida
+	li $v0, 4
+	la $a0, str_rep
+	syscall
+	
+	j main
