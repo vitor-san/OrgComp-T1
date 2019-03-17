@@ -69,6 +69,31 @@ erro_n2_mult:
 	
 	#sair da funcao
 	j main
+
+#include <stdio.h>
+
+
+int main() {
+	
+	int a = 32767,b = 32767;
+	int c;
+
+	do {
+		c = a * b;
+		a++;
+		b++;
+	} while (c > 0);
+
+	printf("%d %d", a, b);
+
+
+
+	return 0;
+}
+
+
+
+
 	
 	
 	
