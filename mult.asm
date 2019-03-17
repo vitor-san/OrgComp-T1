@@ -15,12 +15,38 @@ erro_n1_mult:
 	# atribui 5 para $v0. Le o valor de n1
 	li $v0, 5
 	syscall
+	
 	# Testa se o numero lido possui 16 bits
 	# Substraindo o maior numero possivel (2^16 - 1)
 	# E testando se essa subtracao tem resultado maior que zero (o que eh errado caso aconteca)
+	
+	# Para chegarmos no valor maximo = '46341', fizemos a seguinte funcao em C
+	# que imprime os valores máximos de 'a' e 'b' aceitos para uma multiplcacao
+	# até que o resultado (c) de erro (overflow)
+	
+	# int main() {
+	#	
+	# 	 int a = 32767,b = 32767;
+	#	 int c;
+	#
+	#	 do {
+	#		 c = a * b;
+	#		 a++;
+	#		 b++;
+	#	 } while (c > 0);
+	#
+	#	 printf("%d %d", a, b);
+	#
+	#	 return 0;
+	# }
+	
+	# E a partir desta funcao, tivemos a = b = 46342
+	# Usamos, portante, o valor maximo permitido antes do ultimo incremento = 46341
+	
 	li $t3, 46341
 	sub $t3, $v0, $t3
 	bgt $t3, $zero, erro_n1_mult
+	
 	# registrador $t0 recebe valor digitado pelo usuario que esta em $v0
 	# $t0 <- n1
 	move $t0, $v0
@@ -69,24 +95,3 @@ erro_n2_mult:
 
 	# sair da funcao
 	j main
-
-#include <stdio.h>
-
-
-int main() {
-	
-	int a = 32767,b = 32767;
-	int c;
-
-	do {
-		c = a * b;
-		a++;
-		b++;
-	} while (c > 0);
-
-	printf("%d %d", a, b);
-
-
-
-	return 0;
-}
