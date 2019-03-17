@@ -67,12 +67,5 @@ erro_n2_mult:
 	li $v0, 10	
 	syscall
 	
-	#sair da funcao
+	# sair da funcao
 	j main
-	
-	
-	
-	
-	
-	
-	
