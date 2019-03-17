@@ -1,32 +1,45 @@
 .data
 	.align 0
-	str_arg1: .asciiz "Digite o valor de n1: "
-	str_arg2: .asciiz "Digite o valor de n2: "
+	str_arg1: .asciiz "Digite o valor de n1 (ate 16 bits): "
+	str_arg2: .asciiz "Digite o valor de n2 (ate 16 bits): "
 	str_res_mult: .asciiz "O valor da multiplcacao entre 'n1' e 'n2' eh: "
 	n: .asciiz "\n"
 .text
 	.globl main
 main: 
-	# atribui 4 para $v0. Codigo para print_str
+	# atribui 4 para $v0. Imprimi "Digite o valor de n1: "
 	li $v0, 4 
 	la $a0, str_arg1
 	syscall
-erro_mult:
-	# atribui 5 para $v0. Código para scanf
+erro_n1_mult:
+	# atribui 5 para $v0. Le o valor de n1
 	li $v0, 5
 	syscall
+	# Testa se o numero lido possui 16 bits
+	# Substraindo o maior numero possivel (2^16 - 1)
+	# E testando se essa subtracao tem resultado maior que zero (o que eh errado caso aconteca)
+	li $t3, 46341
+	sub $t3, $v0, $t3
+	bgt $t3, $zero, erro_n1_mult
 	# registrador $t0 recebe valor digitado pelo usuario que esta em $v0
-	# $t0 <- a
+	# $t0 <- n1
 	move $t0, $v0
-	# atribui 4 para $v0. Código para print_str
+	# atribui 4 para $v0. Imprime "Digite o valor de n2: "
 	li $v0, 4
 	la $a0, str_arg2
-	syscall
-	# atribui 5 para $v0. Código para scanf
+	syscall 
+erro_n2_mult:
+	# atribui 5 para $v0. Le o valor de n2
 	li $v0, 5
 	syscall
+	# Testa se o numero lido possui 16 bits
+	# Substraindo o maior numero possivel (2^16 - 1)
+	# E testando se essa subtracao tem resultado maior que zero (o que eh errado caso aconteca)
+	li $t3, 46341
+	sub $t3, $v0, $t3
+	bgt $t3, $zero, erro_n2_mult
 	# registrador $t1 recebe valor digitado pelo usuario que esta em $v0
-	# $t1 <- b
+	# $t1 <- n2
 	move $t1, $v0
 	
 	# trecho que executa a multiplcacao
