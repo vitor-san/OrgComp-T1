@@ -212,6 +212,8 @@ main:	# inicio do programa
 		li $v0, 4		# carrega a instrucao para o v0
 		la $a0, str_sqrt_erro	# carrega o endereco da string que sera mostrada
 		syscall			# imprime a a string
+		
+		j main
 	
 	sqrtn:
 	
@@ -233,14 +235,52 @@ main:	# inicio do programa
 
 	li $t1, 8			# carrego o valor constante 8 para o registrador $t1
 	bne $t0, $t1, fatn		# se o valor que o usuario digitou foi 8, entra na operacao de fatorial
-		j fat			# jump para a linha de codigo da operacao
+		# atribui 4 para $v0. Imprimi "Digite o valor de n: "
+		li $v0, 4 
+		la $a0, str_n1
+		syscall
+	
+	erro_n_fat:
+		# atribui 5 para $v0. Le o valor de 'n'
+		li $v0, 5
+		syscall
+	
+		move $a0, $v0
+	
+		# Testa se o numero lido eh nao negativo
+		ble $v0, $zero, erro_n_fat
+	
+		jal fat_rec
+		move $a1, $v0
+		j sai_calculo_fatorial
+		
 	fatn:
 
 	
 			
 	li $t1, 9			# carrego o valor constante 9 para o registrador $t1
 	bne $t0, $t1, fibn		# se o valor que o usuario digitou foi 9, entra na operacao de Fibonacci
-		j fib			# jump para a linha de codigo da operacao
+	
+		li $v0,4
+		la $a0,str_n1 #print n1 =
+		syscall
+		
+		li $v0,5
+		syscall #le o primeiro numero
+		move $a1,$v0
+			
+		li $v0,4
+		la $a0,str_n2 #print n2 =
+		syscall
+		
+		li $v0,5
+		syscall #le o segundo nummero
+		move $a2,$v0
+	
+		jal fib_seg
+		
+		j main
+			# jump para a linha de codigo da operacao
 	fibn:
 	
 	
@@ -695,25 +735,7 @@ imc:
 
 	j main			# o programa pedira por uma nova opcao
 	
-fat:
-# atribui 4 para $v0. Imprimi "Digite o valor de n: "
-	li $v0, 4 
-	la $a0, str_n1
-	syscall
-	
-erro_n_fat:
-	# atribui 5 para $v0. Le o valor de 'n'
-	li $v0, 5
-	syscall
-	
-	move $a0, $v0
-	
-	# Testa se o numero lido eh nao negativo
-	ble $v0, $zero, erro_n_fat
-	
-	jal fat_rec
-	move $a1, $v0
-	j sai_calculo_fatorial
+
 	# registrador $t0 recebe valor digitado pelo usuario que esta em $v0
 	# $t0 <- n
 	#move $t0, $v0
@@ -771,26 +793,6 @@ sai_calculo_fatorial:
 	
 	j main
 	
-fib :
-		
-	li $v0,4
-	la $a0,str_n1 #print n1 =
-	syscall
-		
-	li $v0,5
-	syscall #le o primeiro numero
-	move $a1,$v0
-		
-	li $v0,4
-	la $a0,str_n2 #print n2 =
-	syscall
-		
-	li $v0,5
-	syscall #le o segundo nummero
-	move $a2,$v0
-	
-	jal fib_seg
-	j main
 	
 fib_seg:
 
