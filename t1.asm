@@ -27,9 +27,13 @@
 	str_resu_pot: .asciiz ">> n1 ^ exp = "
 	str_resu_fat: .asciiz ">> n1! = "
 	str_resu_imc: .asciiz ">> IMC = "
+	str_resu_sqrt: .asciiz ">> Raiz de n1 = "
 	vezes: .asciiz " x "
 	equals :	.asciiz " = " 
 	n :	.asciiz "\n"
+	.align 4
+	numeroPrecisao: .float 0.00001
+	numero2: .float 2
 
 	
 .text	# diretiva para inicio do segmento de texto
@@ -105,36 +109,91 @@ main:	# inicio do programa
 	
 	# a seguir, definiremos em qual das funcoes o programa entrara
 	
-	beq $t0, $zero, soma		# se a opcao escolhida for 0, entao o programa entrara na funcao de soma
+	bne $t0, $zero, soman		# se a opcao escolhida for 0, entao o programa entrara na funcao de soma
 					# caso contrario, continuara procurando a opcao certa
 					# a mesma ideia se aplica em cada um dos blocos de codigo abaixo (como se fossem diversos ifs)
-	
+	#Codigo
+	j soma
+	soman:
+			
 	li $t1, 1			# carrego o valor constante 1 para o registrador $t1
-	beq $t0, $t1, subt		# se o valor que o usuario digitou foi 1, entra na operacao de subtracao
+	bne $t0, $t1, subtn		# se o valor que o usuario digitou foi 1, entra na operacao de subtracao
+	#Codigo
+	j subt
+	subtn:
+	
+	
 	
 	li $t1, 2
-	beq $t0, $t1, multi
+	bne $t0, $t1, multin
+	#Codigo
+	j multi
+	multin:
+	
+	
 	
 	li $t1, 3
-	beq $t0, $t1, divi
+	bne $t0, $t1, divin
+	#Codigo
+	j divi
+	divin:
+	
+	
 	
 	li $t1, 4
-	beq $t0, $t1, pot
+	bne $t0, $t1, potn
+	#Codigo
+	j pot
+	potn:
+	
+	
 	
 	li $t1, 5
-	beq $t0, $t1, sqrt
+	bne $t0, $t1, sqrtn
+		
+		li $v0, 4		# print_str
+		la $a0, str_n1		
+		syscall
+		li $v0, 5 # Le o interio para o calculo da raiz
+		syscall
+		move $a0, $v0
+		
+		j sqrt
+	sqrtn:
+	
+	
 	
 	li $t1, 6
-	beq $t0, $t1, tab
+	bne $t0, $t1, tabn
+	#Codigo
+	j tab
+	tabn:
+	
+	
 	
 	li $t1, 7
-	beq $t0, $t1, imc
+	bne $t0, $t1, imcn
+	#Codigo
+	j imc
+	imcn:
+
+
 
 	li $t1, 8
-	beq $t0, $t1, fat
+	bne $t0, $t1, fatn
+	#Codigo
+	j fat
+	fatn:
+
 	
+			
 	li $t1, 9
-	beq $t0, $t1, fib
+	bne $t0, $t1, fibn
+	#Codigo
+	j fib
+	fibn:
+	
+	
 	
 	li $t1, 10
 	beq $t0, $t1, end
@@ -409,6 +468,96 @@ sai_calculo_pot:
 	j main
 	
 sqrt:
+	#OBS f0 nao é salvo pois ele sera usado como retorno, sendo assim, seu valor sera alterado de 
+	#qualquer forma
+	
+	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
+	swc1 $f1, ($sp) # Guarda o registrador na pilha, f1 é a variavel x1, x1 armazena o chute inicialmente
+	
+	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
+	swc1 $f2, ($sp) # Guarda o registrador na pilha, f2 é a variavel x2, guarda o resultado do calculo
+	
+	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
+	swc1 $f3, ($sp) # Guarda o registrador na pilha, f3 guarda o valor anteriro para se ferificar a precisao do resultado
+	
+	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
+	swc1 $f4, ($sp) # Guarda o registrador na pilha, f4 guarda valor enviado como parametro
+
+	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
+	swc1 $f5, ($sp) # Guarda o registrador na pilha, f5 guarda o valor 2.0, muito usado no calculo de raiz
+			
+	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
+	swc1 $f6, ($sp) # Guarda o registrador na pilha, f6 guarda o valor de precisao desejado
+	
+	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
+	swc1 $f7, ($sp) # Guarda o registrador na pilha, f7 guarda o valor do calculo da precisao
+	
+					
+	mtc1 $a0, $f4 # Copia o valor passado como parametro para f4
+	cvt.s.w $f4, $f4 # Comverte o valor para float
+	
+	lwc1 $f5, numero2 # Carrega 2 no registrador, usado muito no calculo
+	
+	div.s $f1, $f4, $f5 # Calcula o chute, sendo ele raiz/2
+
+	lwc1 $f6, numeroPrecisao # Carrega a precisao do calculo da raiz
+	
+	#Realiza a primeira conta antes de entrar no loop, simula um do while
+	
+	div.s $f2, $f4, $f1 #Realiza a conta raiz/x1
+	add.s $f2, $f2, $f1  #Realiza a conta (raiz/x1) + x1
+	div.s $f2, $f2, $f5 #Realiza a conta ((raiz/x1) + x1)/2
+	
+	mov.s $f3, $f1 #Registra o valor anterior em f2
+	mov.s $f1, $f2
+	
+	#Loop para aumento da precisao da raiz ate o desejado
+	LoopRaiz:
+		sub.s $f7, $f3, $f1 # calcula a precisao
+		abs.s $f7, $f7 # converte para positivo
+		c.le.s $f7, $f6
+		bc1t RaizSai
+		div.s $f2, $f4, $f1 #Realiza a conta raiz/x1
+		add.s $f2, $f2, $f1  #Realiza a conta (raiz/x1) + x1
+		div.s $f2, $f2, $f5 #Realiza a conta ((raiz/x1) + x1)/2
+	
+		mov.s $f3, $f1 #Registra o valor anterior em f2
+		mov.s $f1, $f2
+		
+		j LoopRaiz
+	
+	RaizSai:
+	
+	mov.s $f0, $f1 # move o f1, q é o x1, para f0 que sera o registrado de retorno
+	
+	lwc1 $f7, ($sp) # Recupero o valor de f7 da pilha
+	addi $sp, $sp, 4 # Volta 1 end na pilha, para o proximo com dados
+	
+	lwc1 $f6, ($sp) # Recupero o valor de f6 da pilha
+	addi $sp, $sp, 4 # Volta 1 end na pilha, para o proximo com dados
+	
+	lwc1 $f5, ($sp) # Recupero o valor de f5 da pilha
+	addi $sp, $sp, 4 # Volta 1 end na pilha, para o proximo com dados
+	
+	lwc1 $f4, ($sp) # Recupero o valor de f4 da pilha
+	addi $sp, $sp, 4 # Volta 1 end na pilha, para o proximo com dados
+	
+	lwc1 $f3, ($sp) # Recupero o valor de f3 da pilha
+	addi $sp, $sp, 4 # Volta 1 end na pilha, para o proximo com dados
+	
+	lwc1 $f2, ($sp) # Recupero o valor de f2 da pilha
+	addi $sp, $sp, 4 # Volta 1 end na pilha, para o proximo com dados
+	
+	lwc1 $f1, ($sp) # Recupero o valor de f1 da pilha
+	addi $sp, $sp, 4 # Volta 1 end na pilha, para o proximo com dados
+	
+	li $v0, 4		# print_str
+	la $a0, str_resu_sqrt		
+	syscall
+	
+	li $v0, 2
+	mov.s $f12, $f0
+	syscall	
 	
 	j main
 	
@@ -437,7 +586,7 @@ tab:
 		syscall
 	
 		li $v0,1 
-		move $a0, $t1 #print the actual number
+		move $a0, $t1 # print the actual number
 		syscall
 	
 		li $v0, 4
