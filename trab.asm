@@ -27,8 +27,8 @@
 	str_igual: .asciiz " = " 
 	str_line: .asciiz "\n"		# quebra de linha
 	str_tab: .asciiz "\t"		# tab
-	str_sqrt_num: .asciiz "Digite um número inteiro positivo:\n"
-	str_sqrt_erro: .asciiz "Entrada inválida."
+	str_sqrt_num: .asciiz "Digite um nï¿½mero inteiro positivo:\n"
+	str_sqrt_erro: .asciiz "Entrada invï¿½lida."
 	str_res: .asciiz "Resultado:"
 	str_exp: .asciiz "Digite o valor de exp:"
 	.align 4
@@ -136,7 +136,7 @@ main:	# inicio do programa
 	bne $t0, $t1, divin		# se o valor que o usuario digitou foi 3, entra na operacao de divisao
 		
 		li $v0, 4		# carrega 4 para v0, (imprimir string)
-		la $a0, str_n1		#salva o endereço da string em a0
+		la $a0, str_n1		#salva o endereï¿½o da string em a0
 		syscall			#printa string
 	
 		li $v0, 5		# carrega 5 para v0, (le int)
@@ -145,7 +145,7 @@ main:	# inicio do programa
 		move $a0, $v0		# atribui n1 para $a0
 	
 		li $v0, 4		# carrega 4 para v0, (imprimir string)
-		la $a0, str_n2		#salva o endereço da string em a0
+		la $a0, str_n2		#salva o endereï¿½o da string em a0
 		syscall			#printa string
 	
 		li $v0, 5		# carrega 5 para v0, (le int)
@@ -153,7 +153,7 @@ main:	# inicio do programa
 	
 		move $a1, $v0		# atribui n2 para $a1
 		
-		beqz $a1 divi_erro	# verifica se a entrada é valida
+		beqz $a1 divi_erro	# verifica se a entrada ï¿½ valida
 		
 		jal divi		# jump para a linha de codigo da operacao
 		
@@ -192,9 +192,9 @@ main:	# inicio do programa
 		
 		li $v0, 5 		# Le o interio para o calculo da raiz
 		syscall		       	#chama o sistema para ler o numero
-		move $a0, $v0 		# move o numero para a0, pois a0 é o parametro da funcao
+		move $a0, $v0 		# move o numero para a0, pois a0 ï¿½ o parametro da funcao
 		
-		bltz $a0 sqrtn_erro	# verifica se a entrada é valida
+		bltz $a0 sqrtn_erro	# verifica se a entrada ï¿½ valida
 		
 		jal sqrt 		# chama o procedimento para calcular a raiz
 		
@@ -307,7 +307,7 @@ subt:
 	syscall
 	
 	li $v0, 1		# print_int
-	move $a0, $t0		# ira colocar o resultado da subtração em $a0, para que seja printado
+	move $a0, $t0		# ira colocar o resultado da subtraï¿½ï¿½o em $a0, para que seja printado
 	syscall
 
 	j main			# o programa pedira por uma nova opcao
@@ -328,8 +328,8 @@ erro_n1_mult:
 	# E testando se essa subtracao tem resultado maior que zero (o que eh errado caso aconteca)
 	
 	# Para chegarmos no valor maximo = '46341', fizemos a seguinte funcao em C
-	# que imprime os valores máximos de 'a' e 'b' aceitos para uma multiplcacao
-	# até que o resultado (c) de erro (overflow)
+	# que imprime os valores mï¿½ximos de 'a' e 'b' aceitos para uma multiplcacao
+	# atï¿½ que o resultado (c) de erro (overflow)
 	
 	# int main() {
 	#	
@@ -399,23 +399,23 @@ erro_n2_mult:
 	j main
 	
 divi:
-	#OBS f0 nao é salvo pois ele sera usado como retorno, sendo assim, seu valor sera alterado de 
+	#OBS f0 nao ï¿½ salvo pois ele sera usado como retorno, sendo assim, seu valor sera alterado de 
 	#qualquer forma
 	
 	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
-	swc1 $f1, ($sp) # Guarda o registrador na pilha, f1 é o denominador da divisao
+	swc1 $f1, ($sp) # Guarda o registrador na pilha, f1 ï¿½ o denominador da divisao
 	
 	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
-	swc1 $f2, ($sp) # Guarda o registrador na pilha, f2 é o divisor da divisao
+	swc1 $f2, ($sp) # Guarda o registrador na pilha, f2 ï¿½ o divisor da divisao
 	
 	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
-	sw $v0, ($sp) # Guarda o registrador na pilha, v0 é usado para chamar procedimentos
+	sw $v0, ($sp) # Guarda o registrador na pilha, v0 ï¿½ usado para chamar procedimentos
 	
 	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
-	sw $a0, ($sp) # Guarda o registrador na pilha, a0 é usado para passar parametros para o sistema
+	sw $a0, ($sp) # Guarda o registrador na pilha, a0 ï¿½ usado para passar parametros para o sistema
 	
 	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
-	sw $a1, ($sp) # Guarda o registrador na pilha, t0 é usado para armazenar temporariamente o denominador
+	sw $a1, ($sp) # Guarda o registrador na pilha, t0 ï¿½ usado para armazenar temporariamente o denominador
 	
 	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
 	sw $ra, ($sp) # Guarda o registrador na pilha, ra possui o endereco de retorno
@@ -430,7 +430,7 @@ divi:
 	div.s $f1, $f1, $f2 	# realia a multiplicao e salva em f1, apaga o denominador
 	
 	
-	mov.s $f0, $f1 # move o f1, q é o x1, para f0 que sera o registrado de retorno
+	mov.s $f0, $f1 # move o f1, q ï¿½ o x1, para f0 que sera o registrado de retorno
 	
 	lw $ra, ($sp) # Recupero o valor de ra da pilha
 	addi $sp, $sp, 4 # Volta 1 end na pilha, para o proximo com dados
@@ -511,17 +511,17 @@ sai_calculo_pot:
 	j main
 	
 sqrt:
-	#OBS f0 nao é salvo pois ele sera usado como retorno, sendo assim, seu valor sera alterado de 
+	#OBS f0 nao ï¿½ salvo pois ele sera usado como retorno, sendo assim, seu valor sera alterado de 
 	#qualquer forma
 	
 	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
-	sw $ra, ($sp) # Guarda o registrador na pilha, ra é o local de retorno na main`
+	sw $ra, ($sp) # Guarda o registrador na pilha, ra ï¿½ o local de retorno na main`
 	
 	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
-	swc1 $f1, ($sp) # Guarda o registrador na pilha, f1 é a variavel x1, x1 armazena o chute inicialmente
+	swc1 $f1, ($sp) # Guarda o registrador na pilha, f1 ï¿½ a variavel x1, x1 armazena o chute inicialmente
 	
 	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
-	swc1 $f2, ($sp) # Guarda o registrador na pilha, f2 é a variavel x2, guarda o resultado do calculo
+	swc1 $f2, ($sp) # Guarda o registrador na pilha, f2 ï¿½ a variavel x2, guarda o resultado do calculo
 	
 	subi $sp, $sp, 4 # Move o ponteiro da pilha para o proximo end vazio
 	swc1 $f3, ($sp) # Guarda o registrador na pilha, f3 guarda o valor anteriro para se ferificar a precisao do resultado
@@ -574,7 +574,7 @@ sqrt:
 	
 	RaizSai:
 	
-	mov.s $f0, $f1 # move o f1, q é o x1, para f0 que sera o registrado de retorno
+	mov.s $f0, $f1 # move o f1, q ï¿½ o x1, para f0 que sera o registrado de retorno
 	
 	lwc1 $f7, ($sp) # Recupero o valor de f7 da pilha
 	addi $sp, $sp, 4 # Volta 1 end na pilha, para o proximo com dados
@@ -700,36 +700,68 @@ fat:
 	li $v0, 4 
 	la $a0, str_n1
 	syscall
+	
 erro_n_fat:
 	# atribui 5 para $v0. Le o valor de 'n'
 	li $v0, 5
 	syscall
 	
+	move $a0, $v0
+	
 	# Testa se o numero lido eh nao negativo
 	ble $v0, $zero, erro_n_fat
 	
+	jal fat_rec
+	move $a1, $v0
+	j sai_calculo_fatorial
 	# registrador $t0 recebe valor digitado pelo usuario que esta em $v0
 	# $t0 <- n
-	move $t0, $v0
+	#move $t0, $v0
 
 	# codigo vai aqui
-	addi $t1, $zero, 1 # $t1 recebe 1 e sera incrementado dentro do loop (como um 'i')
-	addi $t2, $zero, 1 # $t recebe 1 e acumulara o resultado do fatorial
-entra_calculo_fatorial:
-	bgt $t1, $t0, sai_calculo_fatorial # continua se (i($t1) <= n($t0)), sai do loop se (i($t1) > n($t0))
-	mult $t2, $t1 # LO = resultado * i
-	mflo $t2 # resultado = LO
-	addi $t1, $t1, 1 # $t1++
-	j entra_calculo_fatorial
+	#addi $t1, $zero, 1 # $t1 recebe 1 e sera incrementado dentro do loop (como um 'i')
+	#addi $t2, $zero, 1 # $t recebe 1 e acumulara o resultado do fatorial
+#entra_calculo_fatorial:
+#	bgt $t1, $t0, sai_calculo_fatorial # continua se (i($t1) <= n($t0)), sai do loop se (i($t1) > n($t0))
+#	mult $t2, $t1 # LO = resultado * i
+#	mflo $t2 # resultado = LO
+#	addi $t1, $t1, 1 # $t1++
+#	j entra_calculo_fatorial
+
+fat_rec :
+	addi $sp,$sp,8 #move the stack pointer foward
+	sw $a0, 0($sp) #first position based on the pointer
+	sw $ra, -4($sp) #second position based on the pointer
+	
+	beq $a0,$zero, end_rec #if ($a0 == 0) return
+	addi $a0, $a0, -1 #$a0--
+	
+	jal fat_rec #the recursive call
+	
+	addi $a0,$a0,1 #add one to the return of the recursion
+	mul $v0,$v0,$a0 #multiply the result
+	
+	
+desempilha :
+	lw $a0, 0($sp) #load the last value of $a0
+	lw $ra, -4($sp) #load the last value of $ra
+	addi $sp,$sp,-8 #move the stack pointer back
+	jr $ra #go back to postion determined by $ra
+	
+end_rec : #ends the recursion, after the base case
+	li $v0, 1 
+	j desempilha
+	
+	
 sai_calculo_fatorial:
 	# imprime
 	li $v0, 4
 	la $a0, str_res
 	syscall
-	
+
+	move $a0, $a1		
 	# imprime $t2 (resultado da fat)
 	li $v0, 1
-	move $a0, $t2
 	syscall
 	
 	# pula uma linha
@@ -746,7 +778,7 @@ fib :
 	syscall
 		
 	li $v0,5
-	syscall #read the first number
+	syscall #le o primeiro numero
 	move $a1,$v0
 		
 	li $v0,4
@@ -754,7 +786,7 @@ fib :
 	syscall
 		
 	li $v0,5
-	syscall #read the second number
+	syscall #le o segundo nummero
 	move $a2,$v0
 	
 	jal fib_seg
@@ -763,18 +795,18 @@ fib :
 fib_seg:
 
 	addi $sp,$sp,-12 
-	sw $a1, 0($sp) #the first argument
-	sw $a2, 4($sp) #the second argument		
+	sw $a1, 0($sp) #o primeiro agurmento
+	sw $a2, 4($sp) #o segundo argumento		
 	sw $ra, 8($sp)
 	
-	move $t4,$a2 #stop condition
-	addi $t4,$t4, 1 #end the loop at a-1
+	move $t4,$a2 #condicao de parada
+	addi $t4,$t4, 1 #fim do loop em a-1
 	
 	loop_seg : 
 		beq $a1,$t4,end_loop_seg 
-		jal fibonachi #function that calculate the fibonachi of a2
-		move $a0,$v0	#the return of fibonachi function
-		li $v0,1  #print the return
+		jal fibonachi #funcao que calcula o fibonachi de a2
+		move $a0,$v0	#o rertorno da funcao do fibonachi
+		li $v0,1  #printa o retorno
 		syscall
 		li $v0,4
 		la $a0, str_line #print \n
@@ -802,11 +834,11 @@ fibonachi :
 	
 	addi $t0,$zero,1 #fib(0)
 	addi $t1,$zero,1 #fib(1)
-	addi $t3,$zero,1 #stop condition
+	addi $t3,$zero,1 #condicao de parada
 	
 	loop_fib :
 		beq $a1,$t3,end_loop_fib 
-		add $v0,$t0,$t1 #the next fibonachi number
+		add $v0,$t0,$t1 #o proximo numero na sequencia
 		move $t0,$t1 #fib(n) = fib(n+1)
 		move $t1,$v0 #fib(n+1) = fib(n+2)
 		addi $a1,$a1,-1 
