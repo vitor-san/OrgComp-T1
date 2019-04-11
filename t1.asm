@@ -16,12 +16,16 @@
 	str_opc: .asciiz "\n- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: "
 	str_n1: .asciiz "\nn1 = "
 	str_n2: .asciiz "n2 = "
+	str_exp: .asciiz "exp = "
 	str_peso: .asciiz "\npeso = "
 	str_altura: .asciiz "altura (em cm) = "
 	str_rep_opc: .asciiz "\n\nA opcao digitada nao existe. Digite uma opcao valida!\n"
 	str_resu_soma: .asciiz ">> n1 + n2 = "
 	str_resu_sub: .asciiz ">> n1 - n2 = "
 	str_resu_mult: .asciiz ">> n1 * n2 = "
+	str_resu_div: .asciiz ">> n1 / n2 = "
+	str_resu_pot: .asciiz ">> n1 ^ exp = "
+	str_resu_fat: .asciiz ">> n1! = "
 	str_resu_imc: .asciiz ">> IMC = "
 	vezes: .asciiz " x "
 	equals :	.asciiz " = " 
@@ -200,21 +204,212 @@ subt:
 	j main			# o programa pedira por uma nova opcao
 	
 multi:
-
+	# atribui 4 para $v0. Imprimi "Digite o valor de n1: "
+	li $v0, 4 
+	la $a0, str_n1
+	syscall
+erro_n1_mult:
+	# atribui 5 para $v0. Le o valor de n1
+	li $v0, 5
+	syscall
+	
+	# Testa se o numero lido possui 16 bits
+	# Substraindo o maior numero possivel (2^16 - 1)
+	# E testando se essa subtracao tem resultado maior que zero (o que eh errado caso aconteca)
+	
+	# Para chegarmos no valor maximo = '46341', fizemos a seguinte funcao em C
+	# que imprime os valores máximos de 'a' e 'b' aceitos para uma multiplcacao
+	# até que o resultado (c) de erro (overflow)
+	
+	# int main() {
+	#	
+	# 	 int a = 32767,b = 32767;
+	#	 int c;
+	#
+	#	 do {
+	#		 c = a * b;
+	#		 a++;
+	#		 b++;
+	#	 } while (c > 0);
+	#
+	#	 printf("%d %d", a, b);
+	#
+	#	 return 0;
+	# }
+	
+	# E a partir desta funcao, tivemos a = b = 46342
+	# Usamos, portante, o valor maximo permitido antes do ultimo incremento = 46341
+	
+	li $t3, 46341
+	sub $t3, $v0, $t3
+	bgt $t3, $zero, erro_n1_mult
+	
+	# registrador $t0 recebe valor digitado pelo usuario que esta em $v0
+	# $t0 <- n1
+	move $t0, $v0
+	# atribui 4 para $v0. Imprime "Digite o valor de n2: "
+	li $v0, 4
+	la $a0, str_n2
+	syscall 
+erro_n2_mult:
+	# atribui 5 para $v0. Le o valor de n2
+	li $v0, 5
+	syscall
+	# Testa se o numero lido possui 16 bits
+	# Substraindo o maior numero possivel (2^16 - 1)
+	# E testando se essa subtracao tem resultado maior que zero (o que eh errado caso aconteca)
+	li $t3, 46341
+	sub $t3, $v0, $t3
+	bgt $t3, $zero, erro_n2_mult
+	# registrador $t1 recebe valor digitado pelo usuario que esta em $v0
+	# $t1 <- n2
+	move $t1, $v0
+	
+	# trecho que executa a multiplcacao
+	# envia o resultado da multiplcacao para $t2
+	# t2 <- n1*n2
+	mult $t1, $t0
+	mflo $t2
+	
+	# imprime "O valor da multiplcacao entre 'n1' e 'n2' eh: "
+	li $v0, 4
+	la $a0, str_resu_mult
+	syscall
+	
+	# imprime $t2 (resultado da mult)
+	li $v0, 1
+	move $a0, $t2
+	syscall
+	
+	# pula uma linha
+	li $v0, 4
+	la $a0, n
+	syscall
+	
 	j main
 	
 divi:
-
+	# atribui 4 para $v0. Imprimi "Digite o valor de n1: "
+	li $v0, 4 
+	la $a0, str_n1
+	syscall
+erro_n1_div:
+	# atribui 5 para $v0. Le o valor de n1
+	li $v0, 5
+	syscall
+	
+	# Testa se o numero lido possui 16 bits
+	# Substraindo o maior numero possivel (2^16 - 1 == 65535)
+	# E testando se essa subtracao tem resultado maior que zero (o que eh errado caso aconteca)
+	
+	li $t3, 65535
+	sub $t3, $v0, $t3
+	bgt $t3, $zero, erro_n1_div
+	
+	# registrador $t0 recebe valor digitado pelo usuario que esta em $v0
+	# $t0 <- n1
+	move $t0, $v0
+	# atribui 4 para $v0. Imprime "Digite o valor de n2: "
+	li $v0, 4
+	la $a0, str_n2
+	syscall 
+erro_n2_div:
+	# atribui 5 para $v0. Le o valor de n2
+	li $v0, 5
+	syscall
+	# Testa se o numero lido possui 16 bits
+	# Substraindo o maior numero possivel (2^16 - 1)
+	# E testando se essa subtracao tem resultado maior que zero (o que eh errado caso aconteca)
+	li $t3, 65535
+	sub $t3, $v0, $t3
+	bgt $t3, $zero, erro_n2_div
+	# registrador $t1 recebe valor digitado pelo usuario que esta em $v0
+	# $t1 <- n2
+	move $t1, $v0
+	
+	# trecho que executa a divisao
+	# envia o resultado da divisao para $t2
+	# t2 <- n1/n2
+	div $t0, $t1
+	mflo $t2
+	
+	# imprime "O valor da divisao de 'n1' por 'n2' eh: "
+	li $v0, 4
+	la $a0, str_resu_div
+	syscall
+	
+	# imprime $t2 (resultado da div)
+	li $v0, 1
+	move $a0, $t2
+	syscall
+	
+	# pula uma linha
+	li $v0, 4
+	la $a0, n
+	syscall
+	
 	j main
 	
 pot:
+	# atribui 4 para $v0. Imprimi "Digite o valor de n: "
+	li $v0, 4 
+	la $a0, str_n1
+	syscall
+erro_n_pot:
+	# atribui 5 para $v0. Le o valor de 'n'
+	li $v0, 5
+	syscall
 	
-
+	# Testa se o numero lido eh nao negativo
+	blt $v0, $zero, erro_n_pot
+	
+	# registrador $t0 recebe valor digitado pelo usuario que esta em $v0
+	# $t0 <- n
+	move $t0, $v0
+	# atribui 4 para $v0. Imprime "Digite o valor de exp: "
+	li $v0, 4
+	la $a0, str_exp
+	syscall 
+erro_exp_pot:
+	# atribui 5 para $v0. Le o valor de 'exp'
+	li $v0, 5
+	syscall
+	# Testa se o numero lido eh nao negativo
+	blt $v0, $zero, erro_exp_pot
+	
+	# registrador $t1 recebe valor digitado pelo usuario que esta em $v0
+	# $t1 <- exp
+	move $t1, $v0
+	
+	# codigo vai aqui
+	move $t2, $zero # $t2 recebe zero e sera incrementado dentro do loop (como um 'i')
+	addi $t3, $zero, 1 # $t3 recebe 1 e acumulara o resultado da potenciacao
+entra_calculo_pot:
+	bge $t2, $t1, sai_calculo_pot # continua se ($t2 < exp), sai se ($t2 >= exp)
+	mult $t3, $t0 # LO = resultado * n
+	mflo $t3 # resultado = LO
+	addi $t2, $t2, 1 # $t2++
+	j entra_calculo_pot
+sai_calculo_pot:	
+	# imprime "O valor de 'n elevado ao exp' eh: "
+	li $v0, 4
+	la $a0, str_resu_pot
+	syscall
+	
+	# imprime $t3 (resultado da pot)
+	li $v0, 1
+	move $a0, $t3
+	syscall
+	
+	# pula uma linha
+	li $v0, 4
+	la $a0, n
+	syscall
 
 	j main
 	
 sqrt:
-
+	
 	j main
 	
 tab:
@@ -303,7 +498,47 @@ imc:
 	j main			# o programa pedira por uma nova opcao
 	
 fat:
+	# atribui 4 para $v0. Imprimi "Digite o valor de n: "
+	li $v0, 4 
+	la $a0, str_n1
+	syscall
+erro_n_fat:
+	# atribui 5 para $v0. Le o valor de 'n'
+	li $v0, 5
+	syscall
+	
+	# Testa se o numero lido eh nao negativo
+	ble $v0, $zero, erro_n_fat
+	
+	# registrador $t0 recebe valor digitado pelo usuario que esta em $v0
+	# $t0 <- n
+	move $t0, $v0
 
+	# codigo vai aqui
+	addi $t1, $zero, 1 # $t1 recebe 1 e sera incrementado dentro do loop (como um 'i')
+	addi $t2, $zero, 1 # $t recebe 1 e acumulara o resultado do fatorial
+entra_calculo_fatorial:
+	bgt $t1, $t0, sai_calculo_fatorial # continua se (i($t1) <= n($t0)), sai do loop se (i($t1) > n($t0))
+	mult $t2, $t1 # LO = resultado * i
+	mflo $t2 # resultado = LO
+	addi $t1, $t1, 1 # $t1++
+	j entra_calculo_fatorial
+sai_calculo_fatorial:
+	# imprime "O valor de 'n!' eh: "
+	li $v0, 4
+	la $a0, str_resu_fat
+	syscall
+	
+	# imprime $t2 (resultado da fat)
+	li $v0, 1
+	move $a0, $t2
+	syscall
+	
+	# pula uma linha
+	li $v0, 4
+	la $a0, n
+	syscall
+	
 	j main
 	
 fib :
