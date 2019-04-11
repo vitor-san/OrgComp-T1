@@ -1,0 +1,839 @@
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 0
+
+Primeiro numero: 1257
+Segundo numero: 19282
+>> n1 + n2 = 20539
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 0
+
+Primeiro numero: 1257
+Segundo numero: -7
+>> n1 + n2 = 1250
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 1
+
+Primeiro numero: 300
+Segundo numero: 500
+>> n1 - n2 = -200
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 1
+
+Primeiro numero: 3000
+Segundo numero: -10
+>> n1 - n2 = 3010
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 2
+
+Primeiro numero: 56
+Segundo numero: 88
+>> n1 * n2 = 4928
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 2
+
+Primeiro numero: 19219283
+
+Entrada invalida!
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 2
+
+Primeiro numero: 2000
+Segundo numero: -20
+>> n1 * n2 = -40000
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 3
+
+Primeiro numero: 1235
+Segundo numero: 4
+>> Resultado: 308.75
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 3
+
+Primeiro numero: 500
+Segundo numero: 5
+>> Resultado: 100.0
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 3
+
+Primeiro numero: 348
+Segundo numero: -7
+>> Resultado: -49.714287
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 3
+
+Primeiro numero: 0
+Segundo numero: 7
+>> Resultado: 0.0
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 3
+
+Primeiro numero: 7
+Segundo numero: 0
+
+Entrada invalida!
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 3
+
+Primeiro numero: 0
+Segundo numero: 0
+
+Entrada invalida!
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 4
+
+Primeiro numero: 2
+Digite o valor de exp: 4
+>> Resultado: 16
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 4
+
+Primeiro numero: 32
+Digite o valor de exp: 3
+>> Resultado: 32768
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 4
+
+Primeiro numero: 25
+Digite o valor de exp: 0
+>> Resultado: 1
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 4
+
+Primeiro numero: 4
+Segundo numero: -2
+
+Entrada invalida!
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 5
+
+Digite um numero inteiro positivo: 25
+: 5.0
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 5
+
+Digite um numero inteiro positivo: 17
+>> Resultado: 4.1231055
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 5
+
+Digite um numero inteiro positivo: -2
+
+Entrada invalida!
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 5
+
+Digite um numero inteiro positivo: 0
+>> Resultado: 0.0
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 6
+
+Primeiro numero: 7
+
+	7 x 1 = 7
+	7 x 2 = 14
+	7 x 3 = 21
+	7 x 4 = 28
+	7 x 5 = 35
+	7 x 6 = 42
+	7 x 7 = 49
+	7 x 8 = 56
+	7 x 9 = 63
+	7 x 10 = 70
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 6
+
+Primeiro numero: 400
+
+	400 x 1 = 400
+	400 x 2 = 800
+	400 x 3 = 1200
+	400 x 4 = 1600
+	400 x 5 = 2000
+	400 x 6 = 2400
+	400 x 7 = 2800
+	400 x 8 = 3200
+	400 x 9 = 3600
+	400 x 10 = 4000
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 6
+
+Primeiro numero: -73
+
+	-73 x 1 = -73
+	-73 x 2 = -146
+	-73 x 3 = -219
+	-73 x 4 = -292
+	-73 x 5 = -365
+	-73 x 6 = -438
+	-73 x 7 = -511
+	-73 x 8 = -584
+	-73 x 9 = -657
+	-73 x 10 = -730
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 6
+
+Primeiro numero: 0
+
+	0 x 1 = 0
+	0 x 2 = 0
+	0 x 3 = 0
+	0 x 4 = 0
+	0 x 5 = 0
+	0 x 6 = 0
+	0 x 7 = 0
+	0 x 8 = 0
+	0 x 9 = 0
+	0 x 10 = 0
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 7
+
+Peso: 80
+Altura (em cm): 177
+>> IMC = 25.535446
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 7
+
+Peso: 180
+Altura (em cm): 50
+>> IMC = 720.0
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 7
+
+Peso: 50
+Altura (em cm): 180
+>> IMC = 15.432098
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 8
+
+Primeiro numero: -2
+
+Entrada invalida!
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 8
+
+Primeiro numero: 0
+>> Resultado: 1
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 8
+
+Primeiro numero: 5
+>> Resultado: 120
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 8
+
+Primeiro numero: 10
+>> Resultado: 3628800
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 9
+
+Primeiro numero: 0
+Segundo numero: 5
+1
+1
+2
+3
+5
+8
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 9
+
+Primeiro numero: -2
+
+Entrada invalida!
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 9
+
+Primeiro numero: 3
+Segundo numero: -5
+
+Entrada invalida!
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 9
+
+Primeiro numero: 0
+Segundo numero: 0
+1
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 9
+
+Primeiro numero: 5
+Segundo numero: 2
+
+Entrada invalida!
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 9
+
+Primeiro numero: 6
+Segundo numero: 9
+13
+21
+34
+55
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU PRINCIPAL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+(Todos os numeros fornecidos para as operacoes abaixo devevm ser inteiros)
+0 - Soma
+1 - Subtracao
+2 - Multiplicacao (ambos devem ser de, no maximo, 16 bits)
+3 - Divisao (ambos devem ser de, no maximo, 16 bits)
+4 - Potenciacao (primeiro elevado ao segundo)
+5 - Raiz quadrada
+6 - Tabuada
+7 - Calculo do IMC
+8 - Fatorial
+9 - Termos da sequencia de Fibonacci em (a, b)
+10 - Sair do programa
+
+- Bem-vindx a calculadora MIPS! Digite o numero correspondente a opcao que deseja selecionar: 10
+
+-- program is finished running --
