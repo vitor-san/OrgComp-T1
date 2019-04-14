@@ -257,7 +257,7 @@ sem_fat:				# label usada para criar um "else if" com a operacao
 	li $v0, 5			# carrega 5 para v0, (le int)
 	syscall				# le o numero digitado
 	
-	blt $v0, $zero, erro		# testa se o numero lido eh negativo, caso seja o procedimento nao e chamado
+	ble $v0, $zero, erro		# testa se o numero lido eh negativo, caso seja o procedimento nao e chamado
 	move $a1,$v0			# move o numero lido para $a1		
 			
 	li $v0, 4			# carrega 4 para v0, (imprimir string)
@@ -267,7 +267,7 @@ sem_fat:				# label usada para criar um "else if" com a operacao
 	li $v0, 5			# carrega 5 para v0, (le int)
 	syscall				# le o numero digitado
 	
-	blt $v0, $a1, erro		# testa se o numero lido eh maior ou igual ao primeiro, caso seja o procedimento nao e chamado
+	ble $v0, $a1, erro		# testa se o numero lido eh maior ou igual ao primeiro, caso seja o procedimento nao e chamado
 	move $a2,$v0			# move o numero lido para $a2
 	
 	jal fib_seg			# chama o procedimento para calculo da sequencia de fibonacci
