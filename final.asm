@@ -820,9 +820,10 @@ fibonacci:
 	
 	addi $t0, $zero, 1 	# fib(1)
 	addi $t1, $zero, 1 	# fib(2)
-	addi $t3, $zero, 1 	# condicao de parada
+	addi $t3, $zero, 2 	# condicao de parada
 	
 	beq $a1, $t0, base_case
+	beq $a1, $t3, base_case
 	
 loop_fib:
 	beq $a1, $t3, end_loop_fib 
